@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Page: React.FC = () => {
-    return (
-        <div className='h-screen flex flex-col justify-center items-center'>
-            <h1 className='text-2xl font-semibold'>Welcome to the About Page</h1>
-            <p>This is the About page of your React application.</p>
-        </div>
-    );
-};
+// Lazy load PageContent
+const Page = React.lazy(() => import('../about/pageContent'));
 
-export default Page;
+const PageWrapper: React.FC = () => (
+    <React.Suspense fallback={<div>Loading...</div>}>
+        <Page />
+    </React.Suspense>
+);
+
+export default PageWrapper;
