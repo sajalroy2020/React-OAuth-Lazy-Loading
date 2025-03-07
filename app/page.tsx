@@ -66,6 +66,16 @@ export default function Home() {
           />
           About →
         </Link>
+        <Link className="flex items-center gap-2 hover:underline hover:underline-offset-4" href="/user">
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Users →
+        </Link>
         <Link className="flex items-center gap-2 hover:underline hover:underline-offset-4" href="/admin/dashboard">
           <Image
             aria-hidden
